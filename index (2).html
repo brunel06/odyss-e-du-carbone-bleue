@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>L'Odyssée du Carbone Bleu — Écotourisme · Réserve de Biosphère Transfrontalière du Mono</title>
+<meta name="description" content="Expériences écotouristiques immersives dans les mangroves du Mono, Togo–Bénin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --w:#F7F4EE;--w2:#EDE9DF;--wh:#FDFBF7;
+  --dk:#172219;--dk2:#0F1A12;
+  --lag:#1E6B8A;--lag2:#2D85A8;--lagp:rgba(30,107,138,.12);
+  --nat:#2E6E45;--nat2:#3D8558;--natp:rgba(46,110,69,.1);
+  --gy:#9AA899;--gy2:#6A7A69;
+  --rd:#A33A24;--rd2:#C4482D;--rdp:rgba(163,58,36,.1);
+  --tx:#1C2B1F;--mu:rgba(28,43,31,.52);
+  --bdr:rgba(28,43,31,.13);--bdrw:rgba(255,255,255,.12);
+  --nH:64px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--wh);color:var(--tx);overflow-x:hidden;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:'Cormorant Garamond',serif;line-height:1.08}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+input,select,textarea{outline:none;font-family:'DM Sans',sans-serif}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--w)}::-webkit-scrollbar-thumb{background:var(--nat);border-radius:2px}
+.W{max-width:1140px;margin:0 auto;padding:0 28px}
+.S{padding:88px 0}.Sw{background:var(--w)}.S2{background:var(--w2)}.Sdk{background:var(--dk);color:var(--wh)}
+.tag{font-size:11px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--lag);display:block;margin-bottom:10px}
+.tag-g{color:var(--nat)}.tag-r{color:var(--rd)}.tag-w{color:rgba(255,255,255,.55)}
+.sh{margin-bottom:48px}.sh.C{text-align:center}.sh.C p{margin-inline:auto}
+.sh h2{font-size:clamp(28px,3.8vw,46px);color:var(--tx);margin-bottom:8px}
+.sh h2.W2{color:var(--wh)}
+.sh p{font-size:15px;color:var(--mu);max-width:500px;line-height:1.78}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+/* ANIMATE */
+.fa{opacity:0;transform:translateY(18px);transition:.65s ease}.fa.on{opacity:1;transform:none}
+.fl{opacity:0;transform:translateX(-18px);transition:.65s ease}.fl.on{opacity:1;transform:none}
+.fr{opacity:0;transform:translateX(18px);transition:.65s ease}.fr.on{opacity:1;transform:none}
+/* PHOTO PLACEHOLDER */
+.ph{background:var(--w2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;position:relative;overflow:hidden}
+.ph-lbl{font-size:11px;color:var(--gy);letter-spacing:1.5px;text-transform:uppercase;position:absolute;bottom:12px;left:0;right:0;text-align:center;z-index:2}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+/* BTN */
+.Bn{display:inline-flex;align-items:center;gap:6px;padding:11px 24px;border-radius:2px;font-size:14px;font-weight:500;letter-spacing:.3px;transition:.22s;cursor:pointer}
+.Bnlag{background:var(--lag);color:var(--wh)}.Bnlag:hover{background:var(--lag2);transform:translateY(-1px)}
+.Bnnat{background:var(--nat);color:var(--wh)}.Bnnat:hover{background:var(--nat2);transform:translateY(-1px)}
+.Bnrd{background:var(--rd);color:var(--wh)}.Bnrd:hover{background:var(--rd2);transform:translateY(-1px)}
+.Bnout{background:transparent;color:var(--tx);border:1.5px solid var(--bdr)}.Bnout:hover{border-color:var(--nat);color:var(--nat)}
+.Bnwout{background:transparent;color:var(--wh);border:1.5px solid var(--bdrw)}.Bnwout:hover{border-color:var(--wh);background:rgba(255,255,255,.08)}
+/* ───── NAV ───── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;background:var(--dk);border-bottom:1px solid rgba(255,255,255,.06)}
+.ni{max-width:1140px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:var(--nH)}
+.nlogo{cursor:pointer;display:flex;align-items:center;gap:10px}
+.nlogo-m{width:32px;height:32px;background:var(--nat);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.nlogo-t{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--wh);line-height:1.1}
+.nlogo-s{font-size:9px;color:rgba(255,255,255,.38);letter-spacing:2.5px;text-transform:uppercase}
+.nls{display:flex;align-items:center;gap:2px}
+.nk{padding:6px 12px;background:transparent;color:rgba(255,255,255,.58);font-size:12.5px;font-weight:400;border-radius:2px;transition:.2s;letter-spacing:.2px;border:none}
+.nk:hover{color:var(--wh);background:rgba(255,255,255,.07)}.nk.on{color:var(--wh)}
+.nk-sep{width:1px;height:16px;background:rgba(255,255,255,.1);margin:0 4px}
+.ncta{padding:8px 20px;background:var(--nat);color:var(--wh);font-size:12.5px;font-weight:500;border-radius:2px;transition:.2s;letter-spacing:.2px}
+.ncta:hover{background:var(--nat2)}
+.hbtn{display:none;flex-direction:column;gap:4px;background:none;padding:4px}
+.hbtn span{width:20px;height:1.5px;background:var(--wh);display:block;border-radius:2px}
+#mn{display:none;position:fixed;top:var(--nH);left:0;right:0;background:rgba(15,26,18,.98);padding:14px 28px 20px;z-index:899;flex-direction:column;gap:2px;border-bottom:1px solid rgba(255,255,255,.08)}
+#mn.open{display:flex}
+#mn .nk{font-size:14.5px;color:rgba(255,255,255,.78);padding:10px 6px;border-bottom:1px solid rgba(255,255,255,.06)}
+/* ───── HERO ───── */
+#hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;
+  background:linear-gradient(150deg,#0A1A0C 0%,#112018 35%,#0D2218 70%,#091510 100%)}
+/* 🖼️ PHOTO HERO: background-image:url('photos/mangrove-aerial.jpg');background-size:cover;background-position:center */
+.hero-ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(9,21,12,.88) 0%,rgba(9,21,12,.45) 45%,rgba(9,21,12,.2) 100%)}
+.hero-cnt{position:relative;z-index:1;text-align:center;max-width:780px;padding:0 28px}
+.hero-sup{display:inline-block;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.18);padding:5px 18px;border-radius:2px;margin-bottom:26px;font-weight:400}
+.hero-h1{font-size:clamp(42px,6.5vw,90px);font-weight:700;color:var(--wh);line-height:1.0;margin-bottom:4px;letter-spacing:-1.5px}
+.hero-h1 em{font-style:italic;color:#8ECFB0}
+.hero-ital{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(16px,2vw,22px);color:rgba(255,255,255,.6);margin-bottom:34px;display:block;font-weight:400}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;animation:hfade 3s infinite}
+@keyframes hfade{0%,100%{opacity:.3}50%{opacity:.8}}
+.hero-arrow{width:1px;height:36px;background:rgba(255,255,255,.35)}
+.hero-arr{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase}
+/* ───── STRIP CHIFFRES ───── */
+#strip{background:var(--dk);padding:0}
+.st-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.07)}
+.st-item{padding:36px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.07)}
+.st-item:last-child{border-right:none}
+.st-n{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;color:#8ECFB0;line-height:1;margin-bottom:5px}
+.st-l{font-size:12px;color:rgba(255,255,255,.42);letter-spacing:.2px;line-height:1.4}
+/* ───── MISSION ───── */
+#mission .g2{gap:64px}
+#mission h2{font-size:clamp(30px,3.8vw,48px);color:var(--tx);margin-bottom:18px}
+#mission p{font-size:15.5px;color:var(--mu);line-height:1.82;margin-bottom:12px}
+.val-list{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.val{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border-left:3px solid var(--nat);background:var(--natp)}
+.val-i{font-size:18px;flex-shrink:0;margin-top:2px}
+.val-t{font-size:14px;font-weight:500;color:var(--tx);margin-bottom:2px}
+.val-x{font-size:13px;color:var(--mu);line-height:1.55}
+.mission-img{height:480px;border-radius:3px;overflow:hidden}
+/* ───── CIRCUITS ACCUEIL ───── */
+#circuits-home{background:var(--w2)}
+.cc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cc{border-radius:3px;overflow:hidden;background:var(--wh);border:1px solid var(--bdr);transition:.28s;cursor:pointer}
+.cc:hover{transform:translateY(-4px);box-shadow:0 12px 38px rgba(28,43,31,.12);border-color:transparent}
+.cc-img{height:220px;position:relative;overflow:hidden}
+/* 🖼️ PHOTOS CIRCUITS */
+.cc-img.bleue{background:linear-gradient(155deg,#0C1E30,#193848,#0A1520)}
+.cc-img.verte{background:linear-gradient(155deg,#0A1C10,#163824,#0A140C)}
+.cc-img.rouge{background:linear-gradient(155deg,#1C0A08,#3A1410,#140808)}
+.cc-ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.65) 0%,transparent 50%)}
+.cc-line{position:absolute;bottom:44px;left:18px;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.6);z-index:1}
+.cc-name{position:absolute;bottom:16px;left:18px;right:18px;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--wh);z-index:1;line-height:1.1}
+.cc-dot{position:absolute;top:16px;left:16px;z-index:1;width:10px;height:10px;border-radius:50%}
+.cc-body{padding:18px 18px 20px}
+.cc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.cc-tag{font-size:11.5px;color:var(--gy2);background:var(--w2);padding:3px 10px;border-radius:2px;letter-spacing:.2px}
+.cc-more{font-size:11.5px;color:var(--lag);font-weight:500}
+.cc-cta{display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:500;color:var(--lag);transition:.2s;background:none;padding:0;border:none;cursor:pointer;letter-spacing:.2px}
+.cc.verte .cc-cta{color:var(--nat)}
+.cc.rouge .cc-cta{color:var(--rd)}
+.cc-cta:hover{gap:10px}
+.cc-cta svg{transition:.2s}
+/* ───── IMPACT ───── */
+#impact-home .imp-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bdr)}
+.imp-box{background:var(--wh);padding:40px 24px;text-align:center}
+.imp-n{font-family:'Cormorant Garamond',serif;font-size:50px;font-weight:700;color:var(--nat);line-height:1;margin-bottom:6px}
+.imp-n span{font-size:24px;color:var(--rd)}
+.imp-l{font-size:12.5px;color:var(--mu);line-height:1.45;letter-spacing:.2px}
+/* ───── CTA TARIFS ───── */
+#cta-tarifs{background:var(--dk)}
+.cta-t-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:64px 0}
+.cta-t-l h2{font-size:clamp(26px,3.5vw,42px);color:var(--wh);margin-bottom:8px}
+.cta-t-l p{font-size:15px;color:rgba(255,255,255,.5);max-width:420px;line-height:1.72}
+.cta-t-r{flex-shrink:0;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+/* ───── TÉMOIGNAGE ───── */
+#temoignage{background:var(--w)}
+.temo{max-width:700px;margin:0 auto;text-align:center}
+.temo-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.8vw,32px);font-style:italic;color:var(--tx);line-height:1.5;margin-bottom:20px;font-weight:400}
+.temo-aut{display:flex;align-items:center;justify-content:center;gap:12px}
+.temo-av{width:44px;height:44px;border-radius:50%;background:var(--w2)}
+/* 🖼️ PHOTO TÉMOIGNAGE */
+.temo-name{font-size:14px;font-weight:500;color:var(--tx)}
+.temo-role{font-size:12px;color:var(--mu)}
+/* ───── FOOTER ───── */
+footer{background:var(--dk2);padding:56px 0 28px;border-top:1px solid rgba(255,255,255,.05)}
+.ft-top{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.ft-brand p{font-size:13px;color:rgba(255,255,255,.38);line-height:1.72;margin-top:12px;max-width:210px}
+.ft-ct{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:14px}
+.ft-lks{display:flex;flex-direction:column;gap:8px}
+.ft-lk{font-size:13px;color:rgba(255,255,255,.42);cursor:pointer;transition:.2s;letter-spacing:.2px}
+.ft-lk:hover{color:var(--wh)}
+.ft-bot{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid rgba(255,255,255,.05);font-size:11.5px;color:rgba(255,255,255,.2);letter-spacing:.2px}
+.ft-soc{display:flex;gap:8px}
+.ft-s{width:32px;height:32px;border:1px solid rgba(255,255,255,.1);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;transition:.2s;color:rgba(255,255,255,.4);text-decoration:none}
+.ft-s:hover{border-color:var(--nat2);color:var(--nat2)}
+/* ─── PAGES SECONDAIRES ─── */
+.page{display:none;min-height:100vh;padding-top:var(--nH)}
+.page.active{display:block}
+.page-hero{height:42vh;min-height:280px;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.page-hero-bg{position:absolute;inset:0;background:var(--dk)}
+.page-hero-ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(9,21,12,.88) 0%,rgba(9,21,12,.3) 100%)}
+.page-hero-cnt{position:relative;z-index:1;padding:0 0 44px}
+.ph-pretitle{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:8px;font-weight:400}
+.ph-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,62px);font-weight:700;color:var(--wh);line-height:1.0}
+/* PAGE CIRCUITS */
+.circuit-full{margin-bottom:72px}
+.cf-hd{display:flex;align-items:center;gap:16px;margin-bottom:36px;padding-bottom:24px;border-bottom:2px solid var(--bdr)}
+.cf-dot{width:14px;height:14px;border-radius:50%}
+.cf-title{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:var(--tx)}
+.cf-sub{font-size:14px;color:var(--mu);margin-left:auto;font-style:italic}
+.cf-layout{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.cf-img{height:360px;border-radius:3px;overflow:hidden;position:relative}
+.cf-infos{display:flex;flex-direction:column;gap:10px}
+.cf-desc{font-size:15px;color:var(--mu);line-height:1.78;margin-bottom:4px}
+.act-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.act{display:flex;align-items:center;gap:9px;padding:11px 14px;background:var(--w);border:1px solid var(--bdr);border-radius:2px;transition:.2s}
+.act:hover{border-color:var(--lag);background:var(--lagp)}
+.act.verte:hover{border-color:var(--nat);background:var(--natp)}
+.act.rouge:hover{border-color:var(--rd);background:var(--rdp)}
+.act-ico{font-size:18px;flex-shrink:0}
+.act-n{font-size:13.5px;color:var(--tx);font-weight:400}
+.cf-price{padding:18px 20px;background:var(--dk);border-radius:2px;color:var(--wh);margin-top:4px;display:flex;justify-content:space-between;align-items:center}
+.cfp-l{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:5px}
+.cfp-n{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#8ECFB0}
+/* PAGE TARIFS */
+.tarif-table{width:100%;border-collapse:collapse;border:1px solid var(--bdr)}
+.tarif-table th{background:var(--dk);color:rgba(255,255,255,.55);font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:13px 18px;text-align:left}
+.tarif-table td{padding:13px 18px;font-size:14px;color:var(--mu);border-bottom:1px solid var(--bdr)}
+.tarif-table td:last-child{color:var(--tx);font-weight:600;text-align:right;font-family:'Cormorant Garamond',serif;font-size:16px}
+.tarif-table tr:last-child td{border-bottom:none}
+.tarif-table tr:hover td{background:var(--natp)}
+.tsec td{background:var(--w2)!important;color:var(--nat)!important;font-family:'DM Sans',sans-serif!important;font-size:10px!important;font-weight:600!important;letter-spacing:2px!important;text-transform:uppercase!important;border-bottom:1px solid var(--bdr)!important}
+/* PAGE IMPACTS */
+.imp-big{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:48px}
+.ib{padding:36px;background:var(--wh);border:1px solid var(--bdr);border-radius:3px;border-left:4px solid var(--nat)}
+.ib.lag{border-left-color:var(--lag)}.ib.rd{border-left-color:var(--rd)}
+.ib-n{font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:700;color:var(--nat);line-height:1;margin-bottom:6px}
+.ib.lag .ib-n{color:var(--lag)}.ib.rd .ib-n{color:var(--rd)}
+.ib-l{font-size:14.5px;color:var(--mu);line-height:1.5}
+.ptnrs-grid{display:flex;flex-wrap:wrap;gap:10px}
+.ptnr{padding:7px 18px;border:1px solid var(--bdr);border-radius:2px;font-size:13px;color:var(--mu);background:var(--wh)}
+/* PAGE GALERIE */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery-item{overflow:hidden;border-radius:3px;cursor:zoom-in;transition:.3s;position:relative}
+.gallery-item:hover{opacity:.88}
+.gallery-item .ph{height:220px}
+.gallery-item:first-child{grid-column:span 2}.gallery-item:first-child .ph{height:300px}
+/* PAGE ÉQUIPE */
+.eq-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
+.eq-card{text-align:center}
+.eq-av{width:100%;aspect-ratio:1;border-radius:3px;overflow:hidden;margin-bottom:14px}
+.eq-av .ph{height:100%;border-radius:3px}
+/* 🖼️ PHOTOS ÉQUIPE */
+.eq-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--tx);margin-bottom:4px}
+.eq-role{font-size:12px;color:var(--lag);font-weight:500;letter-spacing:.5px;text-transform:uppercase}
+/* PAGE À PROPOS */
+.ap-layout{display:grid;grid-template-columns:1fr 1fr;gap:52px}
+/* PAGE CONTACT */
+.ct-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+.cf2{display:flex;flex-direction:column;gap:14px}
+.cf2-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fl-lbl{display:block;font-size:12px;font-weight:500;color:var(--tx);margin-bottom:5px;letter-spacing:.3px}
+.fl-inp,.fl-sel,.fl-ta{width:100%;padding:10px 14px;border:1.5px solid var(--bdr);border-radius:2px;font-size:14px;color:var(--tx);background:var(--wh);transition:.2s;display:block}
+.fl-inp:focus,.fl-sel:focus,.fl-ta:focus{border-color:var(--nat)}
+.fl-sel option{background:var(--wh)}
+.ct-info{display:flex;flex-direction:column;gap:18px}
+.ct-i{display:flex;gap:12px;align-items:flex-start}
+.ct-ico{width:40px;height:40px;background:var(--natp);border:1px solid rgba(46,110,69,.2);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.ct-t{font-size:14px;font-weight:500;color:var(--tx);margin-bottom:3px}
+.ct-x{font-size:13.5px;color:var(--mu);line-height:1.55}
+/* MODAL */
+#mo{position:fixed;inset:0;z-index:2000;background:rgba(15,26,18,.88);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.3s;padding:16px}
+#mo.open{opacity:1;pointer-events:all}
+.mdl{width:100%;max-width:500px;max-height:88vh;background:var(--wh);border-radius:3px;overflow:hidden;display:flex;flex-direction:column;transform:translateY(16px);transition:.3s;border:1px solid var(--bdr)}
+#mo.open .mdl{transform:translateY(0)}
+.mhd{padding:20px 24px;background:var(--dk);display:flex;align-items:center;justify-content:space-between}
+.mtt{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--wh);font-weight:600}
+.mcl{width:30px;height:30px;background:rgba(255,255,255,.08);color:var(--wh);font-size:16px;border-radius:2px;border:none;cursor:pointer;transition:.2s}
+.mcl:hover{background:rgba(255,255,255,.16)}
+.mstps{display:flex;height:3px;gap:1px}
+.mst{flex:1;background:var(--w2);transition:.3s}
+.mst.done{background:var(--nat)}.mst.cur{background:var(--lag)}
+.mbod{padding:22px 24px;overflow-y:auto;flex:1;background:var(--w)}
+.mfg{margin-bottom:14px}
+.mfl{display:block;font-size:12px;font-weight:500;color:var(--tx);margin-bottom:5px;letter-spacing:.3px}
+.mfi,.mfs{width:100%;padding:10px 13px;border:1.5px solid var(--bdr);border-radius:2px;color:var(--tx);font-size:14px;transition:.2s;display:block;background:var(--wh)}
+.mfi:focus,.mfs:focus{border-color:var(--nat)}.mfs option{background:var(--wh)}
+.mfr{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.mft{padding:14px 24px;border-top:1px solid var(--bdr);background:var(--wh)}
+.mest{padding:10px 14px;background:var(--natp);border:1px solid rgba(46,110,69,.18);border-radius:2px;margin-bottom:12px;text-align:center}
+.mel{font-size:11px;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}
+.mep{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--nat);font-weight:700}
+.mbts{display:flex;gap:8px}
+.mbpv{flex:1;padding:10px;border-radius:2px;border:1.5px solid var(--bdr);background:transparent;color:var(--tx);font-size:14px;cursor:pointer;transition:.2s}
+.mbpv:hover{background:var(--w2)}
+.mbnx{flex:2;padding:10px;border-radius:2px;background:var(--nat);color:var(--wh);font-size:14px;font-weight:500;cursor:pointer;transition:.2s;border:none}
+.mbnx:hover{background:var(--nat2)}
+#nf{position:fixed;top:80px;right:18px;z-index:1500;padding:11px 16px;border-radius:2px;background:var(--nat);color:var(--wh);font-weight:500;font-size:13.5px;box-shadow:0 4px 20px rgba(0,0,0,.18);transform:translateX(130%);transition:.3s;max-width:260px}
+#nf.show{transform:translateX(0)}
+/* CART BAR */
+#cb{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--dk);color:var(--wh);padding:11px 26px;border-radius:2px;font-weight:500;font-size:13.5px;z-index:600;box-shadow:0 6px 22px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:.3s;white-space:nowrap;cursor:pointer;letter-spacing:.2px}
+#cb.show{opacity:1;pointer-events:all}
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .g2,.cf-layout,.ct-layout,.ap-layout,.ft-top{grid-template-columns:1fr}
+  .cc-grid,.g3{grid-template-columns:1fr 1fr}
+  .eq-grid{grid-template-columns:repeat(3,1fr)}
+  .act-grid{grid-template-columns:1fr}
+  .imp-big{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .gallery-item:first-child{grid-column:span 1}.gallery-item:first-child .ph{height:220px}
+  .st-grid{grid-template-columns:repeat(2,1fr)}
+  .st-item:nth-child(2){border-right:none}
+  .cta-t-inner{flex-direction:column;gap:24px}
+  .cta-t-r{flex-direction:row;flex-wrap:wrap}
+  .nls{display:none}.hbtn{display:flex}
+  .cf-sub{display:none}
+}
+@media(max-width:580px){
+  .W{padding:0 18px}
+  .cc-grid{grid-template-columns:1fr}
+  .eq-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-btns{flex-direction:column;align-items:center}
+  .imp-row{grid-template-columns:1fr 1fr}
+  .cf2-row,.mfr{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr 1fr}
+}
+
+/* ── BOUTIQUE ── */
+.bq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.bq-card{border:1px solid var(--bdr);border-radius:3px;overflow:hidden;background:var(--wh);transition:.28s;display:flex;flex-direction:column}
+.bq-card:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(28,43,31,.11);border-color:rgba(46,110,69,.3)}
+.bq-img{height:170px;overflow:hidden;position:relative;background:var(--w2);display:flex;align-items:center;justify-content:center}
+.bq-img-ph{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-size:10px;color:var(--gy);letter-spacing:1px;text-transform:uppercase}
+.bq-body{padding:16px;flex:1;display:flex;flex-direction:column}
+.bq-name{font-size:14px;font-weight:500;color:var(--tx);margin-bottom:5px;line-height:1.35}
+.bq-desc{font-size:12.5px;color:var(--mu);line-height:1.5;margin-bottom:14px;flex:1}
+.bq-foot{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--bdr)}
+.bq-price{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--nat);font-weight:700}
+.bq-btn{padding:8px 14px;border-radius:2px;background:var(--nat);color:var(--wh);font-size:12px;font-weight:500;cursor:pointer;transition:.2s;border:none;letter-spacing:.3px}
+.bq-btn:hover{background:var(--nat2)}
+.bq-badge{position:absolute;top:10px;left:10px;background:var(--rd);color:var(--wh);font-size:10px;font-weight:600;padding:3px 8px;border-radius:2px;letter-spacing:.5px;text-transform:uppercase}
+/* ── DON ── */
+.don-hero{background:var(--dk);padding:72px 0;text-align:center;position:relative;overflow:hidden}
+.don-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(46,110,69,.15),rgba(163,58,36,.1))}
+.don-hero h2{font-size:clamp(28px,4vw,52px);color:var(--wh);margin-bottom:14px;position:relative;line-height:1.08}
+.don-hero p{font-size:16px;color:rgba(255,255,255,.65);max-width:560px;margin:0 auto 34px;line-height:1.78;position:relative}
+.don-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.don-impacts{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}
+.don-impact{padding:28px 22px;text-align:center;background:var(--wh);border:1px solid var(--bdr);border-radius:3px;border-top:3px solid var(--nat)}
+.don-impact.lag{border-top-color:var(--lag)}.don-impact.rd{border-top-color:var(--rd)}
+.don-impact-n{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;color:var(--nat);line-height:1;margin-bottom:8px}
+.don-impact.lag .don-impact-n{color:var(--lag)}.don-impact.rd .don-impact-n{color:var(--rd)}
+.don-impact-l{font-size:13.5px;color:var(--mu);line-height:1.5}
+.don-niveaux{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
+.don-niv{padding:20px 16px;text-align:center;border:1.5px solid var(--bdr);border-radius:3px;cursor:pointer;transition:.25s;background:var(--wh)}
+.don-niv:hover,.don-niv.sel{border-color:var(--nat);background:var(--natp)}
+.don-niv-amt{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--nat);line-height:1;margin-bottom:6px}
+.don-niv-lbl{font-size:12px;color:var(--mu);line-height:1.4}
+/* ── RESPONSIVE FIXES ── */
+@media(max-width:1024px){.bq-grid{grid-template-columns:repeat(2,1fr)}.don-impacts,.don-niveaux{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.bq-grid{grid-template-columns:1fr 1fr}.don-impacts{grid-template-columns:1fr}.don-niveaux{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div id="nf"></div>
+<div id="cb" onclick="notify('Commande finalisable à votre arrivée.')">🛒 <span id="cc">0</span> article</div>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav">
+  <div class="ni">
+    <div class="nlogo" onclick="go('home')">
+      <div class="nlogo-m">🌿</div>
+      <div><div class="nlogo-t">L'Odyssée du Carbone Bleu</div><div class="nlogo-s">Réserve de Biosphère Transfrontalière du Mono (Bénin – Togo)</div></div>
+    </div>
+    <div class="nls">
+      <button class="nk" data-p="apropos" onclick="go('apropos')">Le Projet</button>
+      <div class="nk-sep"></div>
+      <button class="nk" data-p="circuits" onclick="go('circuits')">Circuits</button>
+      <button class="nk" data-p="tarifs" onclick="go('tarifs')">Tarifs</button>
+      <button class="nk" data-p="impacts" onclick="go('impacts')">Impact</button>
+      <button class="nk" data-p="galerie" onclick="go('galerie')">Galerie</button>
+      <button class="nk" data-p="equipe" onclick="go('equipe')">Équipe</button>
+      <button class="nk" data-p="boutique" onclick="go('boutique')">Boutique</button>
+      <div class="nk-sep"></div>
+      <button class="nk" data-p="contact" onclick="go('contact')">Contact</button>
+      <button class="nk" data-p="don" onclick="go('don')" style="background:var(--rd);color:var(--wh);border-radius:2px;padding:6px 12px">❤ Don</button>
+    </div>
+    <button class="ncta" onclick="openModal()">Réserver</button>
+    <button class="hbtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div id="mn">
+  <button class="nk" onclick="go('apropos')">Le Projet</button>
+  <button class="nk" onclick="go('circuits')">Circuits</button>
+  <button class="nk" onclick="go('tarifs')">Tarifs</button>
+  <button class="nk" onclick="go('impacts')">Impact</button>
+  <button class="nk" onclick="go('galerie')">Galerie</button>
+  <button class="nk" onclick="go('equipe')">Équipe</button>
+  <button class="nk" onclick="go('boutique')">Boutique</button>
+  <button class="nk" onclick="go('contact')">Contact</button>
+  <button class="nk" onclick="go('don')" style="color:#E05A2B;font-weight:600">❤ Faire un don</button>
+  <button class="ncta" onclick="openModal()" style="margin-top:8px;display:inline-block;width:auto">Réserver</button>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE ACCUEIL
+══════════════════════════════════════ -->
+<div id="pg-home" class="page active">
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-ov"></div>
+    <div class="hero-cnt">
+      <div class="hero-sup">Réserve de Biosphère Transfrontalière du Mono</div>
+      <h1 class="hero-h1">L'Odyssée du<br><em>Carbone Bleu</em></h1>
+      <span class="hero-ital">Là où la forêt boit la mer</span>
+      <div class="hero-btns">
+        <button class="Bn Bnnat" onclick="openModal()">Réserver une expérience</button>
+        <button class="Bn Bnwout" onclick="go('circuits')">Découvrir les circuits</button>
+      </div>
+    </div>
+    <div class="hero-scroll"><div class="hero-arrow"></div><span class="hero-arr">Descendre</span></div>
+  </section>
+  <!-- STRIP CHIFFRES -->
+  <div id="strip">
+    <div class="st-grid">
+      <div class="st-item fa"><div class="st-n">3</div><div class="st-l">Circuits écotouristiques</div></div>
+      <div class="st-item fa" style="transition-delay:.1s"><div class="st-n">21</div><div class="st-l">Activités proposées</div></div>
+      <div class="st-item fa" style="transition-delay:.18s"><div class="st-n">100%</div><div class="st-l">Zéro moteur thermique</div></div>
+      <div class="st-item fa" style="transition-delay:.26s"><div class="st-n">70%</div><div class="st-l">Revenus redistribués localement</div></div>
+    </div>
+  </div>
+  <!-- MISSION -->
+  <section id="mission" class="S Sw">
+    <div class="W">
+      <div class="g2">
+        <div class="fl">
+          <span class="tag">Notre Mission</span>
+          <h2>Vivre la mangrove.<br>La régénérer en vivant.</h2>
+          <p style="font-size:15.5px;color:var(--mu);line-height:1.82;margin:18px 0 12px">L'Odyssée du Carbone Bleu propose des expériences écotouristiques immersives dans la Réserve de Biosphère Transfrontalière du Mono. Chaque visite finance directement la restauration des mangroves et bénéficie aux communautés locales.</p>
+          <p style="font-size:15.5px;color:var(--mu);line-height:1.82;margin-bottom:24px">Nos circuits sont conçus pour ceux qui veulent vivre une aventure authentique, contribuer à la conservation et découvrir un écosystème exceptionnel.</p>
+          <button class="Bn Bnout" onclick="go('apropos')">En savoir plus →</button>
+        </div>
+        <div class="mission-img fr ph" data-label="[ Photo : mangroves du Mono ]"></div>
+      </div>
+    </div>
+  </section>
+  <!-- CIRCUITS -->
+  <section id="circuits-home" class="S">
+    <div class="W">
+      <div class="sh C fa"><span class="tag">Nos Expériences</span><h2>Trois lignes, une seule aventure</h2></div>
+      <div class="cc-grid">
+        <!-- BLEUE -->
+        <div class="cc bleue fa" onclick="go('circuits')">
+          <div class="cc-img bleue">
+            <div class="cc-ov"></div>
+            <div class="cc-dot" style="background:#4AABDE"></div>
+            <div class="cc-line">Ligne Bleue</div>
+            <div class="cc-name">L'Odyssée des Eaux</div>
+            <!-- 🖼️ PHOTO: background-image:url('photos/ligne-bleue.jpg');background-size:cover -->
+          </div>
+          <div class="cc-body">
+            <div class="cc-tags">
+              <span class="cc-tag">Croisière</span>
+              <span class="cc-tag">Safari photo</span>
+              <span class="cc-tag">Pêche de nuit</span>
+              <span class="cc-more">+4 activités</span>
+            </div>
+            <button class="cc-cta">Découvrir <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <!-- VERTE -->
+        <div class="cc verte fa" style="transition-delay:.1s" onclick="go('circuits')">
+          <div class="cc-img verte">
+            <div class="cc-ov"></div>
+            <div class="cc-dot" style="background:#6DB852"></div>
+            <div class="cc-line">Ligne Verte</div>
+            <div class="cc-name">La Route du Carbone</div>
+            <!-- 🖼️ PHOTO: background-image:url('photos/ligne-verte.jpg');background-size:cover -->
+          </div>
+          <div class="cc-body">
+            <div class="cc-tags">
+              <span class="cc-tag">Science citoyenne</span>
+              <span class="cc-tag">Yoga</span>
+              <span class="cc-tag">Artisanat</span>
+              <span class="cc-more">+7 activités</span>
+            </div>
+            <button class="cc-cta">Découvrir <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <!-- ROUGE -->
+        <div class="cc rouge fa" style="transition-delay:.19s" onclick="go('circuits')">
+          <div class="cc-img rouge">
+            <div class="cc-ov"></div>
+            <div class="cc-dot" style="background:#E05A2B"></div>
+            <div class="cc-line">Ligne Rouge</div>
+            <div class="cc-name">Les Gardiens des Sanctuaires</div>
+            <!-- 🖼️ PHOTO: background-image:url('photos/ligne-rouge.jpg');background-size:cover -->
+          </div>
+          <div class="cc-body">
+            <div class="cc-tags">
+              <span class="cc-tag">Espaces sacrés</span>
+              <span class="cc-tag">Course de pirogue</span>
+              <span class="cc-more">+2 activités</span>
+            </div>
+            <button class="cc-cta">Découvrir <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- IMPACT -->
+  <section id="impact-home" class="S S2">
+    <div class="W">
+      <div class="sh C fa"><span class="tag">Notre Impact</span><h2>Chaque visite agit</h2></div>
+      <div class="imp-row fa">
+        <div class="imp-box"><div class="imp-n">100K<span>+</span></div><div class="imp-l">palétuviers à planter sur 3 ans</div></div>
+        <div class="imp-box"><div class="imp-n">13</div><div class="imp-l">emplois verts créés localement</div></div>
+        <div class="imp-box"><div class="imp-n">300<span>+</span></div><div class="imp-l">membres de communauté formés</div></div>
+        <div class="imp-box"><div class="imp-n">0</div><div class="imp-l">moteur thermique dans nos pirogues</div></div>
+      </div>
+    </div>
+  </section>
+  <!-- TÉMOIGNAGE -->
+  <section id="temoignage" class="S Sw">
+    <div class="W">
+      <div class="temo fa">
+        <div style="font-size:40px;color:var(--nat);font-family:Georgia,serif;line-height:1;margin-bottom:16px;opacity:.4">"</div>
+        <div class="temo-quote">Replanter un palétuvier à l'aube, dans le silence de la mangrove — c'est la chose la plus utile que j'aie faite en voyage depuis des années.</div>
+        <div class="temo-aut">
+          <div class="temo-av ph"></div><!-- 🖼️ Photo témoin -->
+          <div><div class="temo-name">Sophie M.</div><div class="temo-role">Voyageuse, France · 2025</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CTA TARIFS -->
+  <div id="cta-tarifs">
+    <div class="W">
+      <div class="cta-t-inner">
+        <div class="cta-t-l">
+          <h2>Prêt pour l'Odyssée ?</h2>
+          <p>Consultez notre grille tarifaire complète — circuits, hébergements et formules packages.</p>
+        </div>
+        <div class="cta-t-r">
+          <button class="Bn Bnnat" onclick="go('tarifs')">Voir les tarifs</button>
+          <button class="Bn Bnwout" onclick="openModal()">Réserver maintenant</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- STRIP DON HOME -->
+  <div style="background:var(--nat);padding:44px 0;text-align:center">
+    <div class="W" style="display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap">
+      <div style="text-align:left;flex:1;min-width:240px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--wh);margin-bottom:6px">Soutenez la restauration des mangroves</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.72)">Votre contribution protège un écosystème irremplaçable.</div>
+      </div>
+      <div style="display:flex;gap:12px;flex-shrink:0;flex-wrap:wrap">
+        <button class="Bn" style="background:var(--wh);color:var(--nat);font-weight:600;padding:12px 26px" onclick="go('don')">❤ Faire un don</button>
+        <button class="Bn Bnwout" style="padding:12px 26px" onclick="go('don')">Devenir partenaire</button>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  <footer><div class="W">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--wh);font-weight:600">L'Odyssée du Carbone Bleu</div>
+        <p>Mangal-Data Eco-Hub · Réserve de Biosphère Transfrontalière du Mono, Togo–Bénin.</p>
+        <div class="ft-soc" style="margin-top:14px">
+          <a class="ft-s" href="#">f</a><a class="ft-s" href="#">✕</a><a class="ft-s" href="#">in</a><a class="ft-s" href="#">📷</a>
+        </div>
+      </div>
+      <div><div class="ft-ct">Circuits</div><div class="ft-lks">
+        <span class="ft-lk" onclick="go('circuits')">Ligne Bleue — Les Eaux Sacrées</span>
+        <span class="ft-lk" onclick="go('circuits')">Ligne Verte — La Route du Carbone</span>
+        <span class="ft-lk" onclick="go('circuits')">Ligne Rouge — Les Sanctuaires</span>
+      </div></div>
+      <div><div class="ft-ct">Navigation</div><div class="ft-lks">
+        <span class="ft-lk" onclick="go('apropos')">Le Projet</span>
+        <span class="ft-lk" onclick="go('tarifs')">Tarifs</span>
+        <span class="ft-lk" onclick="go('impacts')">Impact</span>
+        <span class="ft-lk" onclick="go('galerie')">Galerie</span>
+        <span class="ft-lk" onclick="go('equipe')">Équipe</span>
+        <span class="ft-lk" onclick="go('boutique')">Boutique</span>
+        <span class="ft-lk" onclick="go('contact')">Contact</span>
+        <span class="ft-lk" onclick="go('don')" style="color:#E05A2B">❤ Faire un don</span>
+      </div></div>
+      <div><div class="ft-ct">Contact</div><div class="ft-lks">
+        <span class="ft-lk">contact@carbonebleu.org</span>
+        <span class="ft-lk">+228 92 000 000</span>
+        <span class="ft-lk">Grand-Popo · Togo–Bénin</span>
+        <span class="ft-lk" onclick="notify('📧 invest@carbonebleu.org')">Investisseurs</span>
+      </div></div>
+    </div>
+    <div class="ft-bot"><span>© 2026 L'Odyssée du Carbone Bleu · ONG Ucoopia · Festival Mangal · UNESCO MAB</span><span>Togo · Bénin</span></div>
+  </div></footer>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE CIRCUITS
+══════════════════════════════════════ -->
+<div id="pg-circuits" class="page">
+  <div class="page-hero">
+    <div class="page-hero-bg" style="background:linear-gradient(150deg,#0C1E30,#193848,#0A1520)"></div>
+    <div class="page-hero-ov"></div>
+    <div class="page-hero-cnt W">
+      <div class="ph-pretitle">Expériences écotouristiques</div>
+      <div class="ph-title">Nos Circuits</div>
+    </div>
+  </div>
+  <section class="S Sw"><div class="W">
+    <!-- LIGNE BLEUE -->
+    <div class="circuit-full">
+      <div class="cf-hd">
+        <div class="cf-dot" style="background:var(--lag)"></div>
+        <div class="cf-title" style="color:var(--lag)">Ligne Bleue</div>
+        <div class="cf-sub">L'Odyssée des Eaux Sacrées</div>
+      </div>
+      <div class="cf-layout">
+        <div>
+          <div class="cf-img ph bleue" data-label="[ Photo : croisière en pirogue ]" style="background:linear-gradient(155deg,#0C1E30,#193848)"></div>
+          <div class="cf-price" style="margin-top:14px">
+            <div><div class="cfp-l">À partir de</div><div class="cfp-n">15 000 FCFA</div><div style="font-size:12px;color:rgba(255,255,255,.38);margin-top:3px">par personne / demi-journée</div></div>
+            <button class="Bn Bnlag" onclick="openModal('Ligne Bleue')">Réserver</button>
+          </div>
+        </div>
+        <div class="cf-infos">
+          <p class="cf-desc">Navigation à bord de pirogues à propulsion électrique solaire. Immersion totale dans les labyrinthes de palétuviers, observation de la faune, pêche avec les communautés locales.</p>
+          <div class="act-grid">
+            <div class="act"><div class="act-ico">⛵</div><div class="act-n">Croisière en pirogue</div></div>
+            <div class="act"><div class="act-ico">📸</div><div class="act-n">Safari photo</div></div>
+            <div class="act"><div class="act-ico">🌙</div><div class="act-n">Pêche de nuit</div></div>
+            <div class="act"><div class="act-ico">🏠</div><div class="act-n">Éco-lodge flottant</div></div>
+            <div class="act"><div class="act-ico">🏡</div><div class="act-n">Famille d'accueil</div></div>
+            <div class="act"><div class="act-ico">🍳</div><div class="act-n">Atelier cuisine lagunaire</div></div>
+            <div class="act"><div class="act-ico">🎬</div><div class="act-n">Soirée cinéma sur l'eau</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- LIGNE VERTE -->
+    <div class="circuit-full">
+      <div class="cf-hd">
+        <div class="cf-dot" style="background:var(--nat)"></div>
+        <div class="cf-title" style="color:var(--nat)">Ligne Verte</div>
+        <div class="cf-sub">La Route du Carbone Bleu</div>
+      </div>
+      <div class="cf-layout">
+        <div>
+          <div class="cf-img ph verte" data-label="[ Photo : science citoyenne ]" style="background:linear-gradient(155deg,#0A1C10,#163824)"></div>
+          <div class="cf-price" style="margin-top:14px">
+            <div><div class="cfp-l">À partir de</div><div class="cfp-n">10 000 FCFA</div><div style="font-size:12px;color:rgba(255,255,255,.38);margin-top:3px">par personne / demi-journée</div></div>
+            <button class="Bn Bnnat" onclick="openModal('Ligne Verte')">Réserver</button>
+          </div>
+        </div>
+        <div class="cf-infos">
+          <p class="cf-desc">Science citoyenne, reconnexion à la nature, bien-être et artisanat. La ligne la plus diverse, accessible à tous les profils — aventuriers, familles, groupes.</p>
+          <div class="act-grid">
+            <div class="act verte"><div class="act-ico">🔬</div><div class="act-n">Journée science citoyenne</div></div>
+            <div class="act verte"><div class="act-ico">🧑‍🔬</div><div class="act-n">Chercheur d'un jour</div></div>
+            <div class="act verte"><div class="act-ico">🗺️</div><div class="act-n">Visite guidée et découverte</div></div>
+            <div class="act verte"><div class="act-ico">🧺</div><div class="act-n">Activités artisanales</div></div>
+            <div class="act verte"><div class="act-ico">🏆</div><div class="act-n">Chasse au trésor écologique</div></div>
+            <div class="act verte"><div class="act-ico">🌿</div><div class="act-n">Retraite bien-être</div></div>
+            <div class="act verte"><div class="act-ico">📵</div><div class="act-n">Détox digitale</div></div>
+            <div class="act verte"><div class="act-ico">🎨</div><div class="act-n">Atelier peinture et dessin</div></div>
+            <div class="act verte"><div class="act-ico">🧘</div><div class="act-n">Yoga</div></div>
+            <div class="act verte"><div class="act-ico">🚶</div><div class="act-n">Marche silencieuse</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- LIGNE ROUGE -->
+    <div class="circuit-full">
+      <div class="cf-hd">
+        <div class="cf-dot" style="background:var(--rd)"></div>
+        <div class="cf-title" style="color:var(--rd)">Ligne Rouge</div>
+        <div class="cf-sub">Les Gardiens des Sanctuaires</div>
+      </div>
+      <div class="cf-layout">
+        <div>
+          <div class="cf-img ph rouge" data-label="[ Photo : forêts sacrées ]" style="background:linear-gradient(155deg,#1C0A08,#3A1410)"></div>
+          <div class="cf-price" style="margin-top:14px">
+            <div><div class="cfp-l">À partir de</div><div class="cfp-n">20 000 FCFA</div><div style="font-size:12px;color:rgba(255,255,255,.38);margin-top:3px">par personne / soirée</div></div>
+            <button class="Bn Bnrd" onclick="openModal('Ligne Rouge')">Réserver</button>
+          </div>
+        </div>
+        <div class="cf-infos">
+          <p class="cf-desc">Immersion dans la cosmogonie Vodun, les tabous ancestraux et les traditions vivantes du Mono. Accompagnés par les dignitaires locaux, dans le respect absolu des codes culturels.</p>
+          <div class="act-grid">
+            <div class="act rouge"><div class="act-ico">🌿</div><div class="act-n">Découverte des tabous ancestraux</div></div>
+            <div class="act rouge"><div class="act-ico">🏛️</div><div class="act-n">Visite des espaces sacrés</div></div>
+            <div class="act rouge"><div class="act-ico">🚣</div><div class="act-n">Course de pirogue</div></div>
+            <div class="act rouge"><div class="act-ico">🎣</div><div class="act-n">Tournoi de pêche traditionnelle</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+  <footer style="background:var(--dk2);padding:32px 0;border-top:1px solid rgba(255,255,255,.05)"><div class="W"><div class="ft-bot"><span>© 2026 L'Odyssée du Carbone Bleu</span><button class="Bn Bnnat" onclick="go('home')">← Accueil</button></div></div></footer>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE TARIFS
+══════════════════════════════════════ -->
+<div id="pg-tarifs" class="page">
+  <div class="page-hero">
+    <div class="page-hero-bg"></div><div class="page-hero-ov"></div>
+    <div class="page-hero-cnt W"><div class="ph-pretitle">Transparence &amp; Accessibilité</div><div class="ph-title">Tarifs &amp; Réservations</div></div>
+  </div>
+  <section class="S Sw"><div class="W">
+    <div style="max-width:720px;margin:0 auto;text-align:center" class="fa">
+      <span class="tag" style="justify-content:center;display:inline-block">Nos formules</span>
+      <h2 style="font-size:clamp(28px,3.5vw,44px);margin-bottom:20px">Une offre adaptée à chaque visiteur</h2>
+      <p style="font-size:16px;color:var(--mu);line-height:1.82;margin-bottom:12px">Nos expériences sont proposées sous différentes formules adaptées aux <strong style="color:var(--tx)">visiteurs individuels</strong>, <strong style="color:var(--tx)">chercheurs</strong>, <strong style="color:var(--tx)">groupes scolaires</strong>, <strong style="color:var(--tx)">entreprises</strong> et <strong style="color:var(--tx)">partenaires institutionnels</strong>.</p>
+      <p style="font-size:16px;color:var(--mu);line-height:1.82;margin-bottom:44px">Pour consulter l'ensemble des offres et tarifs détaillés, téléchargez notre <strong style="color:var(--tx)">brochure officielle</strong>. La plaquette est mise à jour régulièrement.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:56px">
+        <a href="plaquette-tarifaire.pdf" download class="Bn Bnnat" style="text-decoration:none;font-size:15px;padding:14px 30px">📄 Télécharger la plaquette tarifaire</a>
+        <button class="Bn Bnout" onclick="go('contact')" style="font-size:15px;padding:14px 30px">📞 Demander un devis personnalisé</button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left">
+        <div style="padding:24px;background:var(--w2);border:1px solid var(--bdr);border-radius:3px;border-top:3px solid var(--lag)">
+          <div style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--lag);margin-bottom:10px">Visiteurs</div>
+          <div style="font-size:14px;color:var(--mu);line-height:1.72">Tarifs locaux et internationaux, réductions familles, enfants gratuits jusqu'à 5 ans.</div>
+        </div>
+        <div style="padding:24px;background:var(--w2);border:1px solid var(--bdr);border-radius:3px;border-top:3px solid var(--nat)">
+          <div style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--nat);margin-bottom:10px">Groupes &amp; Scolaires</div>
+          <div style="font-size:14px;color:var(--mu);line-height:1.72">Tarifs groupes à partir de 10 personnes. Formules pédagogiques sur mesure.</div>
+        </div>
+        <div style="padding:24px;background:var(--w2);border:1px solid var(--bdr);border-radius:3px;border-top:3px solid var(--rd)">
+          <div style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--rd);margin-bottom:10px">Entreprises &amp; RSE</div>
+          <div style="font-size:14px;color:var(--mu);line-height:1.72">Séminaires, team building nature, partenariats carbone. Devis personnalisé.</div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+  <footer style="background:var(--dk2);padding:32px 0;border-top:1px solid rgba(255,255,255,.05)"><div class="W"><div class="ft-bot"><span>© 2026 L'Odyssée du Carbone Bleu</span><button class="Bn Bnnat" onclick="go('home')">← Accueil</button></div></div></footer>
+</div>
+
+<div id="pg-impacts" class="page">
+  <div class="page-hero">
+    <div class="page-hero-bg"></div><div class="page-hero-ov"></div>
+    <div class="page-hero-cnt W"><div class="ph-pretitle">Conservation &amp; Développement</div><div class="ph-title">Notre Impact</div></div>
+  </div>
+  <section class="S Sw"><div class="W">
+    <div class="imp-big fa">
+      <div class="ib"><div class="ib-n">100 000</div><div class="ib-l">Palétuviers à planter sur 3 ans dans les zones dégradées de la Réserve de Biosphère Transfrontalière du Mono</div></div>
+      <div class="ib lag"><div class="ib-n" style="color:var(--lag)">70%</div><div class="ib-l">Des revenus redistribués directement aux communautés locales — guides, femmes, familles d'accueil</div></div>
+      <div class="ib"><div class="ib-n">13</div><div class="ib-l">Emplois verts directs créés localement — écoguides, techniciens, cuisinières</div></div>
+      <div class="ib rd"><div class="ib-n" style="color:var(--rd)">0</div><div class="ib-l">Moteur thermique dans nos pirogues. Propulsion électrique solaire uniquement.</div></div>
+    </div>
+    <div class="sh fa"><span class="tag">Partenaires institutionnels</span></div>
+    <div class="ptnrs-grid fa">
+      <span class="ptnr">UNESCO MAB</span><span class="ptnr">UICN</span><span class="ptnr">GIZ Allemagne</span>
+      <span class="ptnr">Enabel Belgique</span><span class="ptnr">Convention RAMSAR</span><span class="ptnr">Eco-Bénin</span>
+      <span class="ptnr">Projet Delta Mono</span><span class="ptnr">ONG Ucoopia</span><span class="ptnr">BioReMa-Togo</span>
+      <span class="ptnr">Min. Env. Bénin</span><span class="ptnr">Min. Env. Togo</span><span class="ptnr">Festival Mangal 2026</span>
+    </div>
+  </div></section>
+  <footer style="background:var(--dk2);padding:32px 0;border-top:1px solid rgba(255,255,255,.05)"><div class="W"><div class="ft-bot"><span>© 2026 L'Odyssée du Carbone Bleu</span><button class="Bn Bnnat" onclick="go('home')">← Accueil</button></div></div></footer>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE GALERIE
+══════════════════════════════════════ -->
+<div id="pg-galerie" class="page">
+  <div class="page-hero">
+    <div class="page-hero-bg"></div><div class="page-hero-ov"></div>
+    <div class="page-hero-cnt W"><div class="ph-pretitle">Visuels authentiques</div><div class="ph-title">Galerie</div></div>
+  </div>
+  <section class="S Sw"><div class="W">
+    <div class="gallery-grid fa">
+      <div class="gallery-item" style="grid-column:span 2"><div class="ph" style="height:320px;background:linear-gradient(155deg,#0C1E30,#193848)" data-label="[ Photo : vue aérienne mangroves ]"></div></div>
+      <div class="gallery-item"><div class="ph" style="height:220px;background:linear-gradient(155deg,#0A1C10,#163824)" data-label="[ Photo : pirogue au lever du soleil ]"></div></div>
+      <div class="gallery-item"><div class="ph" style="height:220px;background:linear-gradient(155deg,#1C0A08,#3A1410)" data-label="[ Photo : cérémonie Vodun ]"></div></div>
+      <div class="gallery-item"><div class="ph" style="height:220px;background:linear-gradient(155deg,#1C1008,#3A2A10)" data-label="[ Photo : femmes salicultrices ]"></div></div>
+      <div class="gallery-item"><div class="ph" style="height:220px;background:linear-gradient(155deg,#0A1820,#163040)" data-label="[ Photo : safari photo faune ]"></div></div>
+      <div class="gallery-item"><div class="ph" style="height:220px;background:linear-gradient(155deg,#101C10,#203A20)" data-label="[ Photo : yoga en mangrove ]"></div></div>
+      <div class="gallery-item"><div class="ph" style="height:220px;background:linear-gradient(155deg,#1A0A08,#2A1A10)" data-label="[ Photo : artisanat local ]"></div></div>
+      <div class="gallery-item" style="grid-column:span 2"><div class="ph" style="height:260px;background:linear-gradient(155deg,#0A1A12,#142A1A)" data-label="[ Photo : cours de pirogue traditionnelle ]"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:28px;font-size:13.5px;color:var(--mu);font-style:italic">Photos authentiques à venir — aucune image générée par IA</div>
+  </div></section>
+  <footer style="background:var(--dk2);padding:32px 0;border-top:1px solid rgba(255,255,255,.05)"><div class="W"><div class="ft-bot"><span>© 2026 L'Odyssée du Carbone Bleu</span><button class="Bn Bnnat" onclick="go('home')">← Accueil</button></div></div></footer>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE ÉQUIPE
+══════════════════════════════════════ -->
+<div id="pg-equipe" class="page">
+  <div class="page-hero">
+    <div class="page-hero-bg"></div><div class="page-hero-ov"></div>
+    <div class="page-hero-cnt W"><div class="ph-pretitle">Les bâtisseurs</div><div class="ph-title">Notre Équipe</div></div>
+  </div>
+  <section class="S Sw"><div class="W">
+    <div class="eq-grid fa">
+      <div class="eq-card"><div class="eq-av"><div class="ph" style="height:100%;background:linear-gradient(135deg,#1A4828,#2E6840)" data-label="[ Photo Léger ]"></div></div><div class="eq-name">Léger DENON</div><div class="eq-role">Coordinateur Général</div></div>
+      <div class="eq-card"><div class="eq-av"><div class="ph" style="height:100%;background:linear-gradient(135deg,#2A1810,#4A2818)" data-label="[ Photo Cynthia ]"></div></div><div class="eq-name">Cynthia CHRYSOSTOME</div><div class="eq-role">Responsable Écotourisme</div></div>
+      <div class="eq-card"><div class="eq-av"><div class="ph" style="height:100%;background:linear-gradient(135deg,#0A2040,#1A4070)" data-label="[ Photo Brunel ]"></div></div><div class="eq-name">Brunel TINHUITIN</div><div class="eq-role">Lead Développeur Digital</div></div>
+      <div class="eq-card"><div class="eq-av"><div class="ph" style="height:100%;background:linear-gradient(135deg,#1A3820,#2E6030)" data-label="[ Photo Ephraim ]"></div></div><div class="eq-name">Ephraim TAMEGNON</div><div class="eq-role">Environnement &amp; Conservation</div></div>
+      <div class="eq-card"><div class="eq-av"><div class="ph" style="height:100%;background:linear-gradient(135deg,#281830,#4A2850)" data-label="[ Photo Alida ]"></div></div><div class="eq-name">Alida DJOSSA</div><div class="eq-role">Économie Locale &amp; Social</div></div>
+    </div>
+  </div></section>
+  <footer style="background:var(--dk2);padding:32px 0;border-top:1px solid rgba(255,255,255,.05)"><div class="W"><div class="ft-bot"><span>© 2026 L'Odyssée du Carbone Bleu</span><button class="Bn Bnnat" onclick="go('home')">← Accueil</button></div></div></footer>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE À PROPOS
+══════════════════════════════════════ -->
+<div id="pg-apropos" class="page">
+  <div class="page-hero">
+    <div class="page-hero-bg"></div><div class="page-hero-ov"></div>
+    <div class="page-hero-cnt W"><div class="ph-pretitle">Mission &amp; Vision</div><div class="ph-title">Le Projet</div></div>
+  </div>
+  <section class="S Sw"><div class="W">
+    <div class="ap-layout">
+      <div class="fl">
+        <span class="tag">Notre histoire</span>
+        <h2 style="font-size:clamp(28px,3.5vw,44px);margin-bottom:18px">Un modèle né de la mangrove</h2>
+        <p style="font-size:15.5px;color:var(--mu);line-height:1.82;margin-bottom:14px">L'Odyssée du Carbone Bleu est née d'un constat : la Réserve de Biosphère Transfrontalière du Mono est l'un des écosystèmes les plus précieux et les plus menacés d'Afrique de l'Ouest. Ses mangroves stockent jusqu'à dix fois plus de carbone par hectare que les forêts terrestres.</p>
+        <p style="font-size:15.5px;color:var(--mu);line-height:1.82;margin-bottom:14px">Notre réponse : créer un modèle d'écotourisme communautaire où chaque visite régénère directement l'écosystème, valorise les savoirs locaux et génère des revenus durables pour les populations riveraines.</p>
+        <p style="font-size:15.5px;color:var(--mu);line-height:1.82;margin-bottom:28px">Pirogues solaires silencieuses, guides-gardiens locaux, science citoyenne, forêts sacrées Vodun — l'Odyssée du Carbone Bleu relie la tradition à l'innovation climatique.</p>
+        <div class="val-list">
+          <div class="val"><div class="val-i">♻️</div><div><div class="val-t">Tourisme régénératif</div><div class="val-x">Chaque franc dépensé retourne à l'écosystème.</div></div></div>
+          <div class="val"><div class="val-i">👥</div><div><div class="val-t">Communautés d'abord</div><div class="val-x">Les populations locales sont les premiers bénéficiaires.</div></div></div>
+          <div class="val"><div class="val-i">🔬</div><div><div class="val-t">Science citoyenne</div><div class="val-x">Les visiteurs produisent des données climatiques réelles.</div></div></div>
+        </div>
+      </div>
+      <div class="fr" style="display:flex;flex-direction:column;gap:18px">
+        <div class="ph" style="height:320px;border-radius:3px;background:linear-gradient(155deg,#0C1E30,#193848)" data-label="[ Photo : vue aérienne delta du Mono ]"></div>
+        <div style="padding:24px;background:var(--w2);border:1px solid var(--bdr);border-radius:3px">
+          <div class="tag tag-g" style="margin-bottom:10px">Présenté par</div>
+          <p style="font-size:14px;color:var(--mu);line-height:1.72">ONG Ucoopia · Référent entrepreneuriat : Lucien Emmanuel MALIMAN · Festival Mangal 2026 · Réserve de Biosphère Transfrontalière du Mono</p>
+        </div>
+      </div>
+    </div>
+  </div></section>
+  <footer style="background:var(--dk2);padding:32px 0;border-top:1px solid rgba(255,255,255,.05)"><div class="W"><div class="ft-bot"><span>© 2026 L'Odyssée du Carbone Bleu</span><button class="Bn Bnnat" onclick="go('home')">← Accueil</button></div></div></footer>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE CONTACT
+══════════════════════════════════════ -->
+<div id="pg-contact" class="page">
+  <div class="page-hero">
+    <div class="page-hero-bg"></div><div class="page-hero-ov"></div>
+    <div class="page-hero-cnt W"><div class="ph-pretitle">Planifiez votre séjour</div><div class="ph-title">Contact</div></div>
+  </div>
+  <section class="S Sw"><div class="W">
+    <div class="ct-layout">
+      <div class="fl">
+        <div class="sh"><span class="tag">Écrivez-nous</span><h2>Démarrez votre Odyssée</h2></div>
+        <form class="cf2" onsubmit="submitF(event)">
+          <div class="cf2-row">
+            <div><label class="fl-lbl">Prénom &amp; Nom</label><input class="fl-inp" placeholder="Marie Kofi" type="text" required></div>
+            <div><label class="fl-lbl">Email</label><input class="fl-inp" placeholder="votre@email.com" type="email" required></div>
+          </div>
+          <div><label class="fl-lbl">Objet</label>
+            <select class="fl-sel">
+              <option>Réservation circuit touristique</option>
+              <option>Hébergement</option>
+              <option>Partenariat ONG / Institution</option>
+              <option>Investissement / Bailleur</option>
+              <option>Recherche scientifique</option>
+              <option>Presse &amp; Médias</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div><label class="fl-lbl">Message</label><textarea class="fl-ta" rows="4" placeholder="Décrivez votre demande..."></textarea></div>
+          <button class="Bn Bnnat" type="submit" style="align-self:flex-start">Envoyer le message →</button>
+        </form>
+      </div>
+      <div class="ct-info fr">
+        <div class="ct-i"><div class="ct-ico">📧</div><div><div class="ct-t">Email</div><div class="ct-x">contact@carbonebleu.org<br>invest@carbonebleu.org</div></div></div>
+        <div class="ct-i"><div class="ct-ico">📱</div><div><div class="ct-t">WhatsApp</div><div class="ct-x">+228 92 000 000<br><span style="font-size:12.5px;color:var(--mu)">Réponse sous 24h</span></div></div></div>
+        <div class="ct-i"><div class="ct-ico">📍</div><div><div class="ct-t">Sur le terrain</div><div class="ct-x">Bouche du Roy · Grand-Popo<br>Réserve de Biosphère Transfrontalière du Mono (Bénin – Togo)</div></div></div>
+        <div style="padding:22px;background:var(--natp);border:1px solid rgba(46,110,69,.18);border-radius:3px;margin-top:8px">
+          <div class="tag tag-g" style="margin-bottom:8px">Investisseurs &amp; Bailleurs</div>
+          <p style="font-size:14px;color:var(--mu);line-height:1.7">Dossier complet disponible sur demande.<br>invest@carbonebleu.org</p>
+        </div>
+      </div>
+    </div>
+  </div></section>
+  <footer style="background:var(--dk2);padding:32px 0;border-top:1px solid rgba(255,255,255,.05)"><div class="W"><div class="ft-bot"><span>© 2026 L'Odyssée du Carbone Bleu</span><button class="Bn Bnnat" onclick="go('home')">← Accueil</button></div></div></footer>
+</div>
+
+<div id="pg-boutique" class="page">
+  <div class="page-hero">
+    <div class="page-hero-bg" style="background:linear-gradient(150deg,#0A1C10,#1A3820,#0A1210)"></div>
+    <div class="page-hero-ov"></div>
+    <div class="page-hero-cnt W">
+      <div class="ph-pretitle">Produits du terroir</div>
+      <div class="ph-title">Boutique ECO-MANGROVE</div>
+    </div>
+  </div>
+  <section class="S Sw"><div class="W">
+    <div class="sh C fa">
+      <span class="tag">Nos produits</span>
+      <h2>Chaque achat est un acte de conservation</h2>
+      <p>Chaque achat soutient directement les communautés riveraines et les actions de conservation de la Réserve de Biosphère Transfrontalière du Mono (Bénin – Togo).</p>
+    </div>
+    <div class="bq-grid">
+      <div class="bq-card fa" style="transition-delay:0.00s">
+          <div class="bq-img" style="background:linear-gradient(135deg,#C8C0A0,#A8B0A0)">
+            <span style="font-size:52px">🧂</span>
+            <div class="bq-img-ph">[ Photo réelle à ajouter ]</div>
+          </div>
+          <div class="bq-body">
+            <div class="bq-name">Sel solaire artisanal <span style="font-size:12px;color:var(--mu);font-weight:400">– 250 g</span></div>
+            <div class="bq-desc">Évaporé naturellement par les femmes salicultrices. Sans additif, 100% naturel.</div>
+            <div class="bq-foot">
+              <div class="bq-price">1 500 FCFA</div>
+              <button class="bq-btn" onclick="notify('📦 Demande enregistrée — nous vous contactons sous 24h.')">Commander</button>
+            </div>
+          </div>
+        </div><div class="bq-card fa" style="transition-delay:0.05s">
+          <div class="bq-img" style="background:linear-gradient(135deg,#B8B098,#989888)"><div class="bq-badge">Économique</div>
+            <span style="font-size:52px">🧂</span>
+            <div class="bq-img-ph">[ Photo réelle à ajouter ]</div>
+          </div>
+          <div class="bq-body">
+            <div class="bq-name">Sel solaire artisanal <span style="font-size:12px;color:var(--mu);font-weight:400">– 1 kg</span></div>
+            <div class="bq-desc">Format familial. Produit directement dans la Réserve du Mono, en remplacement du bois de feu.</div>
+            <div class="bq-foot">
+              <div class="bq-price">4 500 FCFA</div>
+              <button class="bq-btn" onclick="notify('📦 Demande enregistrée — nous vous contactons sous 24h.')">Commander</button>
+            </div>
+          </div>
+        </div><div class="bq-card fa" style="transition-delay:0.10s">
+          <div class="bq-img" style="background:linear-gradient(135deg,#C8903A,#A87028)">
+            <span style="font-size:52px">🍯</span>
+            <div class="bq-img-ph">[ Photo réelle à ajouter ]</div>
+          </div>
+          <div class="bq-body">
+            <div class="bq-name">Miel de mangrove sauvage <span style="font-size:12px;color:var(--mu);font-weight:400">– 250 g</span></div>
+            <div class="bq-desc">Récolté par les apiculteurs du delta. Notes florales uniques, riche en polyphénols.</div>
+            <div class="bq-foot">
+              <div class="bq-price">4 000 FCFA</div>
+              <button class="bq-btn" onclick="notify('📦 Demande enregistrée — nous vous contactons sous 24h.')">Commander</button>
+            </div>
+          </div>
+        </div><div class="bq-card fa" style="transition-delay:0.15s">
+          <div class="bq-img" style="background:linear-gradient(135deg,#B88030,#906020)"><div class="bq-badge">Populaire</div>
+            <span style="font-size:52px">🍯</span>
+            <div class="bq-img-ph">[ Photo réelle à ajouter ]</div>
+          </div>
+          <div class="bq-body">
+            <div class="bq-name">Miel de mangrove sauvage <span style="font-size:12px;color:var(--mu);font-weight:400">– 500 g</span></div>
+            <div class="bq-desc">Le format idéal pour les amateurs. Certifié bio, filière courte, traçabilité garantie.</div>
+            <div class="bq-foot">
+              <div class="bq-price">7 500 FCFA</div>
+              <button class="bq-btn" onclick="notify('📦 Demande enregistrée — nous vous contactons sous 24h.')">Commander</button>
+            </div>
+          </div>
+        </div><div class="bq-card fa" style="transition-delay:0.20s">
+          <div class="bq-img" style="background:linear-gradient(135deg,#A89070,#806848)">
+            <span style="font-size:52px">🧺</span>
+            <div class="bq-img-ph">[ Photo réelle à ajouter ]</div>
+          </div>
+          <div class="bq-body">
+            <div class="bq-name">Panier / Vannerie artisanale</div>
+            <div class="bq-desc">Tressé à la main par les femmes du Mono. Chaque pièce est unique.</div>
+            <div class="bq-foot">
+              <div class="bq-price">8 000 FCFA</div>
+              <button class="bq-btn" onclick="notify('📦 Demande enregistrée — nous vous contactons sous 24h.')">Commander</button>
+            </div>
+          </div>
+        </div><div class="bq-card fa" style="transition-delay:0.25s">
+          <div class="bq-img" style="background:linear-gradient(135deg,#3A5828,#284018)">
+            <span style="font-size:52px">🎨</span>
+            <div class="bq-img-ph">[ Photo réelle à ajouter ]</div>
+          </div>
+          <div class="bq-body">
+            <div class="bq-name">Pagne teint aux tanins <span style="font-size:12px;color:var(--mu);font-weight:400">– de palétuviers</span></div>
+            <div class="bq-desc">Teinture naturelle aux tanins de palétuviers. Pièce artisanale exclusive du Mono.</div>
+            <div class="bq-foot">
+              <div class="bq-price">15 000 FCFA</div>
+              <button class="bq-btn" onclick="notify('📦 Demande enregistrée — nous vous contactons sous 24h.')">Commander</button>
+            </div>
+          </div>
+        </div><div class="bq-card fa" style="transition-delay:0.30s">
+          <div class="bq-img" style="background:linear-gradient(135deg,#8A6848,#6A5038)">
+            <span style="font-size:52px">🏺</span>
+            <div class="bq-img-ph">[ Photo réelle à ajouter ]</div>
+          </div>
+          <div class="bq-body">
+            <div class="bq-name">Poterie céramique locale</div>
+            <div class="bq-desc">Façonnée par les potiers locaux. Inspiration des motifs traditionnels lagunaires.</div>
+            <div class="bq-foot">
+              <div class="bq-price">10 000 FCFA</div>
+              <button class="bq-btn" onclick="notify('📦 Demande enregistrée — nous vous contactons sous 24h.')">Commander</button>
+            </div>
+          </div>
+        </div><div class="bq-card fa" style="transition-delay:0.35s">
+          <div class="bq-img" style="background:linear-gradient(135deg,#C8C090,#A8A070)">
+            <span style="font-size:52px">🥥</span>
+            <div class="bq-img-ph">[ Photo réelle à ajouter ]</div>
+          </div>
+          <div class="bq-body">
+            <div class="bq-name">Huile de coco artisanale <span style="font-size:12px;color:var(--mu);font-weight:400">– 250 ml</span></div>
+            <div class="bq-desc">Pressée à froid dans les villages riverains. Usage alimentaire et cosmétique.</div>
+            <div class="bq-foot">
+              <div class="bq-price">5 000 FCFA</div>
+              <button class="bq-btn" onclick="notify('📦 Demande enregistrée — nous vous contactons sous 24h.')">Commander</button>
+            </div>
+          </div>
+        </div><div class="bq-card fa" style="transition-delay:0.40s">
+          <div class="bq-img" style="background:linear-gradient(135deg,#2E6E45,#1E4E30)"><div class="bq-badge">Coup de ❤</div>
+            <span style="font-size:52px">📦</span>
+            <div class="bq-img-ph">[ Photo réelle à ajouter ]</div>
+          </div>
+          <div class="bq-body">
+            <div class="bq-name">Box Trésor du Mono <span style="font-size:12px;color:var(--mu);font-weight:400">– Abonnement trimestriel</span></div>
+            <div class="bq-desc">Sélection de 4–6 produits du terroir livrés chaque trimestre. Surprise garantie.</div>
+            <div class="bq-foot">
+              <div class="bq-price">35 000 FCFA</div>
+              <button class="bq-btn" onclick="notify('📦 Demande enregistrée — nous vous contactons sous 24h.')">Commander</button>
+            </div>
+          </div>
+        </div><div class="bq-card fa" style="transition-delay:0.45s">
+          <div class="bq-img" style="background:linear-gradient(135deg,#1E6B8A,#145070)">
+            <span style="font-size:52px">🌱</span>
+            <div class="bq-img-ph">[ Photo réelle à ajouter ]</div>
+          </div>
+          <div class="bq-body">
+            <div class="bq-name">Passeport du Restaurateur</div>
+            <div class="bq-desc">Document nominatif lié à votre parcelle reboisée. Suivi via app Mangal-Data, certificat inclus.</div>
+            <div class="bq-foot">
+              <div class="bq-price">12 000 FCFA</div>
+              <button class="bq-btn" onclick="notify('📦 Demande enregistrée — nous vous contactons sous 24h.')">Commander</button>
+            </div>
+          </div>
+        </div><div class="bq-card fa" style="transition-delay:0.50s">
+          <div class="bq-img" style="background:linear-gradient(135deg,#2A5838,#1A3828)"><div class="bq-badge">Digital</div>
+            <span style="font-size:52px">🌳</span>
+            <div class="bq-img-ph">[ Photo réelle à ajouter ]</div>
+          </div>
+          <div class="bq-body">
+            <div class="bq-name">NFT · Certificat d'adoption d'arbre</div>
+            <div class="bq-desc">Adoptez un palétuvier, recevez un certificat numérique et suivez sa croissance.</div>
+            <div class="bq-foot">
+              <div class="bq-price">10 000 FCFA</div>
+              <button class="bq-btn" onclick="notify('📦 Demande enregistrée — nous vous contactons sous 24h.')">Commander</button>
+            </div>
+          </div>
+        </div><div class="bq-card fa" style="transition-delay:0.55s">
+          <div class="bq-img" style="background:linear-gradient(135deg,#3A3828,#282818)">
+            <span style="font-size:52px">📖</span>
+            <div class="bq-img-ph">[ Photo réelle à ajouter ]</div>
+          </div>
+          <div class="bq-body">
+            <div class="bq-name">Livre photo Odyssée du Mono</div>
+            <div class="bq-desc">140 pages de photographies authentiques. Préface des écoguides locaux.</div>
+            <div class="bq-foot">
+              <div class="bq-price">18 000 FCFA</div>
+              <button class="bq-btn" onclick="notify('📦 Demande enregistrée — nous vous contactons sous 24h.')">Commander</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="fa" style="margin-top:44px;padding:28px;background:var(--w2);border:1px solid var(--bdr);border-radius:3px;display:flex;gap:28px;align-items:center;flex-wrap:wrap">
+      <div style="flex:1;min-width:260px">
+        <div class="tag tag-g" style="margin-bottom:8px">Livraison &amp; Commandes</div>
+        <p style="font-size:14px;color:var(--mu);line-height:1.72">Les produits sont disponibles à l'EcoHub lors de votre visite ou sur commande. Pour les commandes hors site, contactez-nous par WhatsApp ou email. Livraison disponible au Bénin et au Togo.</p>
+      </div>
+      <div style="flex-shrink:0;display:flex;gap:12px;flex-wrap:wrap">
+        <button class="Bn Bnnat" onclick="go('contact')">📞 Commander par WhatsApp</button>
+        <button class="Bn Bnout" onclick="go('contact')">Nous contacter</button>
+      </div>
+    </div>
+  </div></section>
+  <footer style="background:var(--dk2);padding:32px 0;border-top:1px solid rgba(255,255,255,.05)"><div class="W"><div class="ft-bot"><span>© 2026 L'Odyssée du Carbone Bleu</span><button class="Bn Bnnat" onclick="go('home')">← Accueil</button></div></div></footer>
+</div>
+
+<div id="pg-don" class="page">
+  <div class="don-hero">
+    <div class="W">
+      <h2>Soutenez la restauration<br>des mangroves du Mono</h2>
+      <p>Chaque contribution participe à la préservation des écosystèmes côtiers, au soutien des communautés locales et à la restauration des mangroves de la Réserve de Biosphère Transfrontalière du Mono (Bénin – Togo).</p>
+      <div class="don-btns">
+        <button class="Bn Bnnat" style="font-size:15px;padding:14px 32px" onclick="notify('💚 Merci ! Vous allez être redirigé vers notre plateforme de don sécurisée.')">❤ Faire un don</button>
+        <button class="Bn Bnwout" style="font-size:15px;padding:14px 32px" onclick="go('contact')">🤝 Devenir partenaire</button>
+      </div>
+    </div>
+  </div>
+  <section class="S Sw"><div class="W">
+    <div class="sh C fa"><span class="tag">Ce que vous financez</span><h2>Votre don agit directement sur le terrain</h2></div>
+    <div class="don-impacts fa">
+      <div class="don-impact">
+        <div class="don-impact-n">1 arbre</div>
+        <div class="don-impact-l">planté pour chaque tranche de <strong>500 FCFA</strong> donnée dans les zones dégradées de la Réserve</div>
+      </div>
+      <div class="don-impact lag">
+        <div class="don-impact-n" style="color:var(--lag)">70%</div>
+        <div class="don-impact-l">des fonds redistribués directement aux <strong>communautés locales</strong> — guides, femmes, familles d'accueil</div>
+      </div>
+      <div class="don-impact rd">
+        <div class="don-impact-n" style="color:var(--rd)">100%</div>
+        <div class="don-impact-l">des dons <strong>traçables</strong> via l'application Mangal-Data — rapport d'impact envoyé à chaque donateur</div>
+      </div>
+    </div>
+    <div class="sh fa" style="margin-bottom:24px"><span class="tag">Choisissez votre engagement</span><h3 style="font-size:clamp(22px,3vw,34px)">Quel montant souhaitez-vous donner ?</h3></div>
+    <div class="don-niveaux fa">
+      <div class="don-niv" onclick="selDon(this)"><div class="don-niv-amt">2 500 FCFA</div><div class="don-niv-lbl">5 palétuviers plantés à votre nom</div></div>
+      <div class="don-niv sel" onclick="selDon(this)"><div class="don-niv-amt">10 000 FCFA</div><div class="don-niv-lbl">Kit kit solaire pour une famille saliculture</div></div>
+      <div class="don-niv" onclick="selDon(this)"><div class="don-niv-amt">25 000 FCFA</div><div class="don-niv-lbl">Formation d'un écoguide local pour 1 mois</div></div>
+      <div class="don-niv" onclick="selDon(this)"><div class="don-niv-amt">Libre</div><div class="don-niv-lbl">Je choisis mon montant</div></div>
+    </div>
+    <div class="fa" style="text-align:center;margin-top:8px">
+      <button class="Bn Bnnat" style="font-size:15px;padding:14px 40px" onclick="notify('💚 Merci pour votre soutien ! Redirection vers la plateforme de paiement sécurisé.')">❤ Confirmer mon don</button>
+    </div>
+    <div class="fa" style="margin-top:52px;padding:28px 32px;background:var(--w2);border:1px solid var(--bdr);border-radius:3px">
+      <div class="sh" style="margin-bottom:22px"><span class="tag tag-g">Devenir partenaire</span><h3 style="font-size:clamp(20px,2.8vw,30px)">Engagez votre organisation</h3></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+        <div style="padding:20px;background:var(--wh);border:1px solid var(--bdr);border-radius:3px">
+          <div style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--lag);margin-bottom:8px">Entreprises RSE</div>
+          <div style="font-size:13.5px;color:var(--mu);line-height:1.68">Parrainez des hectares de mangroves, intégrez la conservation à votre rapport RSE. Crédits carbone certifiés disponibles.</div>
+        </div>
+        <div style="padding:20px;background:var(--wh);border:1px solid var(--bdr);border-radius:3px">
+          <div style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--nat);margin-bottom:8px">Fondations &amp; ONG</div>
+          <div style="font-size:13.5px;color:var(--mu);line-height:1.68">Co-financement de programmes de reboisement, formation d'écoguides et développement de l'application Mangal-Data.</div>
+        </div>
+        <div style="padding:20px;background:var(--wh);border:1px solid var(--bdr);border-radius:3px">
+          <div style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--rd);margin-bottom:8px">Institutions académiques</div>
+          <div style="font-size:13.5px;color:var(--mu);line-height:1.68">Accès aux données de terrain Mangal-Data, partenariats de recherche, programmes universitaires en écologie.</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:24px">
+        <button class="Bn Bnout" onclick="go('contact')">Nous contacter pour un partenariat →</button>
+      </div>
+    </div>
+  </div></section>
+  <footer style="background:var(--dk2);padding:32px 0;border-top:1px solid rgba(255,255,255,.05)"><div class="W"><div class="ft-bot"><span>© 2026 L'Odyssée du Carbone Bleu</span><button class="Bn Bnnat" onclick="go('home')">← Accueil</button></div></div></footer>
+</div>
+
+<!-- MODAL RÉSERVATION -->
+<div id="mo">
+  <div class="mdl">
+    <div class="mhd"><div class="mtt">Réserver une expérience</div><button class="mcl" onclick="closeModal()">✕</button></div>
+    <div class="mstps"><div class="mst cur" id="ms1"></div><div class="mst" id="ms2"></div><div class="mst" id="ms3"></div></div>
+    <div class="mbod" id="mbod">
+      <div class="mfg"><label class="mfl">Circuit</label>
+        <select class="mfs" id="mc" onchange="calcE()">
+          <option value="">— Sélectionner —</option>
+          <option value="Ligne Bleue demi-j|15000">🔵 Ligne Bleue — Demi-journée (15 000 FCFA)</option>
+          <option value="Ligne Bleue journée|25000">🔵 Ligne Bleue — Journée (25 000 FCFA)</option>
+          <option value="Ligne Verte demi-j|10000">🟢 Ligne Verte — Demi-journée (10 000 FCFA)</option>
+          <option value="Ligne Verte journée|18000">🟢 Ligne Verte — Journée (18 000 FCFA)</option>
+          <option value="Ligne Rouge soirée|20000">🔴 Ligne Rouge — Soirée (20 000 FCFA)</option>
+          <option value="Ligne Rouge nuit|30000">🔴 Ligne Rouge — Nuit (30 000 FCFA)</option>
+          <option value="Odyssée Intégrale|150000">⭐ Odyssée Intégrale 4N (150 000 FCFA)</option>
+          <option value="Week-end|75000">🌿 Week-end 2N (75 000 FCFA)</option>
+        </select>
+      </div>
+      <div class="mfg"><label class="mfl">Hébergement</label>
+        <select class="mfs" id="mh" onchange="calcE()">
+          <option value="0">Sans hébergement</option>
+          <option value="40000">🏠 Éco-Lodge Flottant — 40 000 FCFA / nuit</option>
+          <option value="9000">🏡 Famille d'Accueil — 9 000 FCFA / nuit</option>
+        </select>
+      </div>
+      <div class="mfr">
+        <div class="mfg"><label class="mfl">Personnes</label><input type="number" class="mfi" id="mp" min="1" max="25" value="2" oninput="calcE()"></div>
+        <div class="mfg"><label class="mfl">Nuits</label><input type="number" class="mfi" id="mn" min="0" max="14" value="1" oninput="calcE()"></div>
+      </div>
+    </div>
+    <div class="mft">
+      <div class="mest"><div class="mel">Estimation</div><div class="mep" id="mep">Sélectionnez un circuit</div></div>
+      <div class="mbts">
+        <button class="mbpv" id="mbpv" style="display:none" onclick="mPrev()">← Retour</button>
+        <button class="mbnx" id="mbnx" onclick="mNext()">Continuer →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ROUTER */
+var allPages=['home','circuits','tarifs','impacts','galerie','equipe','apropos','contact','boutique','don'];
+function go(page){
+  allPages.forEach(function(p){
+    var el=document.getElementById('pg-'+p);
+    if(el)el.className='page'+(p===page?' active':'');
+  });
+  document.querySelectorAll('.nk[data-p]').forEach(function(b){
+    b.classList[b.getAttribute('data-p')===page?'add':'remove']('on');
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('mn').classList.remove('open');
+  setTimeout(observe,100);
+}
+/* NAV SCROLL */
+var nv=document.getElementById('nav');
+window.addEventListener('scroll',function(){nv.style.boxShadow=window.scrollY>10?'0 2px 20px rgba(0,0,0,.25)':'none';},{passive:true});
+/* MENU */
+function toggleMenu(){document.getElementById('mn').classList.toggle('open');}
+/* REVEAL */
+var ro=new IntersectionObserver(function(e){e.forEach(function(el){if(el.isIntersecting)el.target.classList.add('on');});},{threshold:.1});
+function observe(){document.querySelectorAll('.fa,.fl,.fr').forEach(function(el){ro.observe(el);});}
+observe();
+/* NOTIF */
+var nfEl=document.getElementById('nf');
+function notify(m){nfEl.textContent=m;nfEl.classList.add('show');setTimeout(function(){nfEl.classList.remove('show');},2800);}
+/* CART */
+var cart=[];
+function addCart(n){cart.push(n);document.getElementById('cc').textContent=cart.length;document.getElementById('cb').classList.add('show');notify('✓ '+n+' ajouté.');}
+/* FORM */
+function submitF(e){e.preventDefault();notify('✓ Message envoyé. Réponse sous 24h.');e.target.reset();}
+/* MODAL */
+var step=1;
+var s2='<div class="mfg"><label class="mfl">Prénom &amp; Nom</label><input class="mfi" placeholder="Marie Kofi" type="text"></div><div class="mfr"><div class="mfg"><label class="mfl">Date</label><input class="mfi" type="date"></div><div class="mfg"><label class="mfl">WhatsApp</label><input class="mfi" placeholder="+228 92..." type="tel"></div></div><div class="mfg"><label class="mfl">Email</label><input class="mfi" placeholder="votre@email.com" type="email"></div><div class="mfg"><label class="mfl">Demande spéciale</label><textarea class="mfi" rows="3" style="resize:none" placeholder="Accessibilité, régime, groupe..."></textarea></div>';
+var s3='<div style="text-align:center;padding:32px 0"><div style="font-size:46px;color:var(--nat);margin-bottom:14px">✓</div><div style="font-family:Cormorant Garamond,serif;font-size:24px;color:var(--tx);margin-bottom:10px;font-weight:600">Demande reçue</div><div style="font-size:14px;color:var(--mu);line-height:1.8;max-width:300px;margin:0 auto">Notre équipe vous contacte sous <strong>24h par WhatsApp</strong> pour confirmer votre Odyssée.<br><br><em style="color:var(--nat)">Merci de choisir le tourisme régénératif.</em></div></div>';
+function openModal(p){step=1;renderM();if(p){var s=document.getElementById('mc');if(s)for(var i=0;i<s.options.length;i++){if(s.options[i].text.indexOf(p.split(' ')[0])>=0){s.selectedIndex=i;break;}}calcE();}document.getElementById('mo').classList.add('open');}
+function closeModal(){document.getElementById('mo').classList.remove('open');}
+function mNext(){if(step<3){step++;renderM();}}
+function mPrev(){if(step>1){step--;renderM();}}
+function renderM(){
+  for(var i=1;i<=3;i++){var d=document.getElementById('ms'+i);if(d)d.className='mst'+(i<step?' done':i===step?' cur':'');}
+  var b=document.getElementById('mbod');if(step===2)b.innerHTML=s2;else if(step===3)b.innerHTML=s3;
+  var pv=document.getElementById('mbpv'),nx=document.getElementById('mbnx');
+  if(pv)pv.style.display=(step>1&&step<3)?'block':'none';
+  if(nx){nx.style.display=step===3?'none':'block';nx.textContent=step===2?'Envoyer ✓':'Continuer →';}
+  if(step===1)calcE();
+}
+function calcE(){
+  var c=document.getElementById('mc'),h=document.getElementById('mh'),p=document.getElementById('mp'),n=document.getElementById('mn'),ep=document.getElementById('mep');
+  if(!c||!ep)return;
+  var cv=c.value.split('|'),cp=cv[1]?parseInt(cv[1]):0;
+  var hp=h?parseInt(h.value)||0:0;
+  var pers=p?parseInt(p.value)||1:1,nuits=n?parseInt(n.value)||0:0;
+  if(!cp){ep.textContent='Sélectionnez un circuit';return;}
+  ep.textContent=(cp*pers+hp*nuits).toLocaleString('fr-FR')+' FCFA';
+}
+function selDon(el){document.querySelectorAll('.don-niv').forEach(function(d){d.classList.remove('sel');});el.classList.add('sel');}
+document.getElementById('mo').addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>
